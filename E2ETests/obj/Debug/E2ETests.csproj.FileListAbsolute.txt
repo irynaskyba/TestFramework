@@ -1,0 +1,4 @@
+C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\E2ETests.dll
+C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\E2ETests.pdb
+C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\obj\Debug\E2ETests.dll
+C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\obj\Debug\E2ETests.pdb
