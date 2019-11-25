@@ -38,6 +38,10 @@
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -51,12 +55,21 @@
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
+      <HintPath>..\packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="WebDriver\WebDriver.cs" />
-    <Compile Include="WebElements\Search.cs" />
-    <Compile Include="WebDriver\WebDriverSearch.cs" />
+    <Compile Include="Search\Search.cs" />
+    <Compile Include="WebElements\Button.cs" />
+    <Compile Include="WebElements\Div.cs" />
+    <Compile Include="WebElements\Link.cs" />
     <Compile Include="WebElements\InputTextField.cs" />
+    <Compile Include="WebElements\ListItem.cs" />
+    <Compile Include="WebElements\TextElement.cs" />
     <Compile Include="WebElements\UiElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

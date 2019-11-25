@@ -11,13 +11,15 @@ namespace WebElements.WebElements
 
         private SearchService search = new SearchService();
 
-        private readonly IWebElement _webElement;
+        private IWebElement _webElement;
 
         public UiElement(IWebElement webElement)
         {
             Driver = WebDriver.Instance;
             _webElement = webElement;
         }
+
+        public bool Displayed => _webElement.Displayed;
 
         public T FindElement<T>(By by) where T : UiElement
         {
@@ -28,5 +30,7 @@ namespace WebElements.WebElements
         {
             return search.FindElements<TElement>(_webElement, by);
         }
+
+        public string GetAttribute(string attributeName) => _webElement.GetAttribute(attributeName);
     }
 }
