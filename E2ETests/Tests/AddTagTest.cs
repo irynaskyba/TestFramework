@@ -19,6 +19,9 @@ namespace E2ETests.Tests
         [TearDown]
         public void TearDown()
         {
+            mainPage.ClickAddTag();
+            addTagDialog.ClickRemove();
+            addTagDialog.Close();
             mainPage.CloseBrowser();
         }
 
@@ -26,7 +29,7 @@ namespace E2ETests.Tests
         public void VerifyAddingTag()
         {
             mainPage.ClickAddTag();
-            addTagDialog.SelectTag("высшая лига Бельгия турнир Футбол");
+            addTagDialog.SelectTag("высшая лига Бельгия");
             addTagDialog.Close();
 
             Assert.IsTrue(mainPage.IsTagPresent("высшая лига Бельгия"));

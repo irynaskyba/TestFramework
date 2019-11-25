@@ -1,6 +1,9 @@
 ﻿using Core.Search;
 using Core.WebDriver;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+using System;
 using System.Collections.Generic;
 
 namespace WebElements.WebElements
@@ -21,8 +24,10 @@ namespace WebElements.WebElements
 
         public bool Displayed => _webElement.Displayed;
 
-        public T FindElement<T>(By by) where T : UiElement
+        public T FindElement<T>(By by, int secondsToWait = 5) where T : UiElement
         {
+            var wait = new WebDriverWait(WebDriver.driver, TimeSpan.FromSeconds(secondsToWait));
+            wait.Until(ExpectedConditions.ElementExists(by));
             return search.FindElement<T>(_webElement, by);
         }
 

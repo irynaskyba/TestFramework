@@ -11,7 +11,7 @@ namespace E2ETests.Pages
     {
         protected WebDriver WebDriver => WebDriver.Instance;
 
-        private List<TextElement> catHeaderFear => WebDriver.FindElements<TextElement>(By.ClassName(".cat-header--fear"));
+        private List<TextElement> catHeaderFear => WebDriver.FindElements<TextElement>(By.ClassName("cat-header--fear"));
 
         protected bool IsElementPresent(By by)
         {
@@ -23,7 +23,7 @@ namespace E2ETests.Pages
 
         public List<string> GetCatErrorMessages()
         {
-            var errors = catHeaderFear.Select(x => x.Text.Trim());
+            var errors = catHeaderFear.Select(x => x.Text);
             return errors.ToList();
         }
 

@@ -1,6 +1,9 @@
 ﻿using Core.WebDriver;
 using Core.WebElements;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -12,19 +15,23 @@ namespace E2ETests.Pages
     {
         private Div addTagDialog => WebDriver.FindElement<Div>(By.ClassName("user-tags__search"));
         private InputTextField searchField => addTagDialog.FindElement<InputTextField>(By.XPath(".//*[@class='search-block__input']"));
-        private List<ListItem> searchResults => addTagDialog.FindElements<ListItem>(By.XPath(".//li[@class='search-block__results-item']"));
+        private ListItem searchResult(string searchText) => addTagDialog.FindElement<ListItem>(By.XPath($".//li[@class='search-block__results-item']//span[text()='{searchText}']"));
+        private Button removeTag => WebDriver.FindElement<Button>(By.ClassName("user-tags__remove-btn"));
 
-        public void SelectTag(string tagName) => SelectTag(tagName, tagName);
-
-        public void SelectTag(string tagName, string searchText)
+        public void SelectTag(string searchText)
         {
             searchField.SetText(searchText);
-            searchResults.Where(x => x.Text == tagName).FirstOrDefault().Click();
+            searchResult(searchText).Click();
         }
         
         public void Close()
         {
             WebDriver.driver.Navigate().Refresh();
+        }
+
+        public void ClickRemove()
+        {
+            removeTag.Click();
         }
     }
 }

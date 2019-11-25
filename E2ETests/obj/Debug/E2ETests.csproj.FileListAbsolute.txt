@@ -6,6 +6,7 @@ C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ET
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\E2ETests.pdb
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\Core.dll
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\nunit.framework.dll
+C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\SeleniumExtras.WaitHelpers.dll
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\WebDriver.dll
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\WindowsInput.dll
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\Core.pdb
@@ -16,4 +17,3 @@ C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ET
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\obj\Debug\E2ETests.csprojResolveAssemblyReference.cache
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\obj\Debug\E2ETests.dll
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\obj\Debug\E2ETests.pdb
-C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\E2ETests\bin\Debug\SeleniumExtras.WaitHelpers.dll

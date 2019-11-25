@@ -1,6 +1,7 @@
 ﻿using Core.WebDriver;
 using Core.WebElements;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -14,16 +15,13 @@ namespace E2ETests.Pages
         private Div authContainer => WebDriver.FindElement<Div>(By.CssSelector(".auth__login.auth_state_error"));
         private InputTextField username => authContainer.FindElement<InputTextField>(By.XPath(".//input[@name='login']"));
         private InputTextField password => authContainer.FindElement<InputTextField>(By.XPath(".//input[@name='password']"));
-        private Button signIn => authContainer.FindElement<Button>(By.XPath(".//button[@type='submit']"));
+        private Button signIn => authContainer.FindElement<Button>(By.XPath(".//*[@type='submit']"));
 
         public void SignIn(string username, string password)
         {
             this.username.SetText(username);
             this.password.SetText(password);
             signIn.Click();
-
-            var wait = new WebDriverWait(WebDriver.driver, TimeSpan.FromSeconds(5));
-            wait.Until(x => !signInPopup.Displayed);
         }
     }
 }

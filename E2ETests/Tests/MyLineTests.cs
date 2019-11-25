@@ -41,7 +41,7 @@ namespace E2ETests.Tests
             
             Assert.IsTrue(signInPage.HasCatErrors(), "Error is not displayed");
             var expectedMessages = new List<string>()
-                    { "Вы не авторизованы.Войдите или зарегистрируйтесь, чтобы читать ленту — весь контент по интересующим вас темам" }; 
+                    { "Вы не авторизованы.\r\nВойдите или зарегистрируйтесь, чтобы читать ленту — весь контент по интересующим вас темам" }; 
             CollectionAssert.AreEqual(expectedMessages, signInPage.GetCatErrorMessages());
             Assert.IsFalse(myFeedPage.IsFeedDisplayed(), "My Feed is displayed when it was not expected");
         }
