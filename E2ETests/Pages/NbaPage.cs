@@ -1,11 +1,12 @@
-﻿using Core.WebElements;
+﻿using Core.WebDriver;
+using Core.WebElements;
 using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace E2ETests.Pages
 {
-    public class MainPage : BasePage
+    public class NbaPage : BasePage
     {
         private Link addTag => WebDriver.FindElement<Link>(By.CssSelector(".svg-icon.user-panel__svg"));
         private Link signIn => WebDriver.FindElement<Link>(By.XPath("//*[@data-action='login']"));
@@ -21,6 +22,6 @@ namespace E2ETests.Pages
         {
             var tagsTitles = tags.Select(x => x.GetAttribute("title"));
             return tagsTitles.Contains(tag);
-        }
+        }        
     }
 }

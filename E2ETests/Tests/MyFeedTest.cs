@@ -1,31 +1,27 @@
 ﻿using E2ETests.Pages;
+using E2ETests.Suites;
 using NUnit.Framework;
 using System.Collections.Generic;
 
 namespace E2ETests.Tests
 {
     [TestFixture]
-    public class MyLineTests
+    public class MyFeedTest : NbaSuite
     {
-        MainPage mainPage;
+        NbaPage mainPage;
         SignInPage signInPage;
         MyFeedPage myFeedPage;
 
         [SetUp]
         public void SetUp()
         {
-            mainPage = new MainPage();
+            mainPage = new NbaPage();
             signInPage = new SignInPage();
             myFeedPage = new MyFeedPage();
         }
 
-        [TearDown]
-        public void TearDown()
-        {
-            myFeedPage.CloseBrowser();
-        }
-
         [Test]
+        [Ignore("TODO")]
         public void VerifyAuthorizedUserCanSeeMyFeed()
         {
             mainPage.ClickSignIn();
@@ -35,6 +31,7 @@ namespace E2ETests.Tests
         }
 
         [Test]
+        [Ignore("TODO")]
         public void VerifyUnauthorizedUserCannotSeeMyFeed()
         {
             mainPage.ClickMyFeed();

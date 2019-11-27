@@ -1,8 +1,6 @@
 ﻿using Core.Search;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using WebElements.WebElements;
@@ -12,47 +10,49 @@ namespace Core.WebDriver
     public class WebDriver
     {
         private static readonly SearchService search = new SearchService();
-                        
-        public static IWebDriver driver;
-
-        private static WebDriver _instance;
-
-        public WebDriver()
-        {
-            driver = new ChromeDriver();
-        }
         
-        public static WebDriver Instance
+        private static IWebDriver driver;
+                
+        public static IWebDriver Instance
         {
             get
             {
-                if (_instance == null)
+                if (driver == null)
                 {
-                    _instance = new WebDriver();
-                    driver.Manage().Window.Maximize();
-                    GoTo("https://ua.tribuna.com/nba/?gr=www");
+                    throw new Exception("Driver is not started. Please call method 'Start'");
                 }
 
-                return _instance;
+                return driver;
             }
+
+            set { driver = value; }
         }
 
         public static void Close() => driver.Close();
         public static void Quit() => driver.Quit();
 
-        public static void GoTo(string url)
+        public static void Refresh() => driver.Navigate().Refresh();
+
+        public static void Navigate(string url)
         {
             driver.Url = url;
         }
 
-        public T FindElement<T>(By by) where T : UiElement
+        public static void MaximizeWindow() => driver.Manage().Window.Maximize();
+
+        public static T FindElement<T>(By by) where T : UiElement
         {
             return search.FindElement<T>(driver, by);
         }
 
-        public List<TElement> FindElements<TElement>(By by) where TElement : UiElement
+        public static List<TElement> FindElements<TElement>(By by) where TElement : UiElement
         {
             return search.FindElements<TElement>(driver, by);
+        }
+
+        public static void Start()
+        {
+            Instance = new ChromeDriver();
         }
     }
 }

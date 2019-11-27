@@ -1,38 +1,38 @@
 ﻿using E2ETests.Pages;
+using E2ETests.Suites;
 using NUnit.Framework;
 
 namespace E2ETests.Tests
 {
     [TestFixture]
-    public class AddTagTest
+    public class AddTagTest : NbaSuite
     {
-        MainPage mainPage;
+        NbaPage nbaPage;
         AddTagDialog addTagDialog;
 
         [SetUp]
         public void SetUp()
         {
-            mainPage = new MainPage();
+            nbaPage = new NbaPage();
             addTagDialog = new AddTagDialog();
         }
 
         [TearDown]
         public void TearDown()
         {
-            mainPage.ClickAddTag();
+            nbaPage.ClickAddTag();
             addTagDialog.ClickRemove();
             addTagDialog.Close();
-            mainPage.CloseBrowser();
         }
 
         [Test]
         public void VerifyAddingTag()
         {
-            mainPage.ClickAddTag();
+            nbaPage.ClickAddTag();
             addTagDialog.SelectTag("высшая лига Бельгия");
             addTagDialog.Close();
 
-            Assert.IsTrue(mainPage.IsTagPresent("высшая лига Бельгия"));
+            Assert.IsTrue(nbaPage.IsTagPresent("высшая лига Бельгия"));
         }
     }
 }

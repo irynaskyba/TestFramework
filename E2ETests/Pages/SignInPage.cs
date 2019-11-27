@@ -1,10 +1,6 @@
 ﻿using Core.WebDriver;
 using Core.WebElements;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
-using System;
 using WebElements.Controls;
 
 namespace E2ETests.Pages

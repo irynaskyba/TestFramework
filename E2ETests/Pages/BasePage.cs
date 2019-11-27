@@ -9,8 +9,6 @@ namespace E2ETests.Pages
 {
     public class BasePage
     {
-        protected WebDriver WebDriver => WebDriver.Instance;
-
         private List<TextElement> catHeaderFear => WebDriver.FindElements<TextElement>(By.ClassName("cat-header--fear"));
 
         protected bool IsElementPresent(By by)
@@ -18,7 +16,7 @@ namespace E2ETests.Pages
             var elements = WebDriver.FindElements<UiElement>(by);
             return elements.Count != 0;
         }
-
+        
         public bool HasCatErrors() => catHeaderFear.Count != 0;
 
         public List<string> GetCatErrorMessages()
@@ -26,7 +24,5 @@ namespace E2ETests.Pages
             var errors = catHeaderFear.Select(x => x.Text);
             return errors.ToList();
         }
-
-        public void CloseBrowser() => WebDriver.Quit();
     }
 }

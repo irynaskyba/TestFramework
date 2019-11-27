@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\WebElementExtensions.cs" />
+    <Compile Include="Wait\Wait.cs" />
     <Compile Include="WebDriver\WebDriver.cs" />
     <Compile Include="Search\Search.cs" />
     <Compile Include="WebElements\Button.cs" />
