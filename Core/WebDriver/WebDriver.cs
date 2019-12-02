@@ -3,56 +3,58 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
-using WebElements.WebElements;
+using Core.WebElements;
 
 namespace Core.WebDriver
 {
     public class WebDriver
     {
-        private static readonly SearchService search = new SearchService();
+        private static readonly SearchService Search = new SearchService();
         
-        private static IWebDriver driver;
+        private static IWebDriver _driver;
                 
         public static IWebDriver Instance
         {
             get
             {
-                if (driver == null)
+                if (_driver == null)
                 {
-                    throw new Exception("Driver is not started. Please call method 'Start'");
+                    throw new NullReferenceException("Driver is not started. Please call method 'Start'");
                 }
 
-                return driver;
+                return _driver;
             }
 
-            set { driver = value; }
+            set { _driver = value; }
         }
 
-        public static void Close() => driver.Close();
-        public static void Quit() => driver.Quit();
+        public static void Close() => Instance.Close();
+        public static void Quit() => Instance.Quit();
 
-        public static void Refresh() => driver.Navigate().Refresh();
+        public static void Refresh() => Instance.Navigate().Refresh();
 
         public static void Navigate(string url)
         {
-            driver.Url = url;
+            Instance.Url = url;
         }
 
-        public static void MaximizeWindow() => driver.Manage().Window.Maximize();
+        public static void MaximizeWindow() => Instance.Manage().Window.Maximize();
 
         public static T FindElement<T>(By by) where T : UiElement
         {
-            return search.FindElement<T>(driver, by);
+            return Search.FindElement<T>(Instance, by);
         }
 
         public static List<TElement> FindElements<TElement>(By by) where TElement : UiElement
         {
-            return search.FindElements<TElement>(driver, by);
+            return Search.FindElements<TElement>(Instance, by);
         }
 
         public static void Start()
         {
             Instance = new ChromeDriver();
         }
+
+        public static string GetUrl() => Instance.Url;
     }
 }

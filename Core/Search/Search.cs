@@ -1,7 +1,8 @@
 ﻿using Core.Extensions;
 using OpenQA.Selenium;
 using System.Collections.Generic;
-using WebElements.WebElements;
+using System.Linq;
+using Core.WebElements;
 
 namespace Core.Search
 {
@@ -17,14 +18,7 @@ namespace Core.Search
         public List<T> FindElements<T>(ISearchContext searchContext, By by) where T : UiElement
         {
             var elements = searchContext.FindElements(by);
-            var resolvedElements = new List<T>();
-            foreach (var currentElement in elements)
-            {
-                var result = currentElement.To<T>();
-                resolvedElements.Add(result);
-            }
-
-            return resolvedElements;
+            return elements.Select(currentElement => currentElement.To<T>()).ToList();
         }
     }
 }

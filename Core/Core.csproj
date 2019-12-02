@@ -70,7 +70,7 @@
     <Compile Include="WebElements\Link.cs" />
     <Compile Include="WebElements\InputTextField.cs" />
     <Compile Include="WebElements\ListItem.cs" />
-    <Compile Include="WebElements\TextElement.cs" />
+    <Compile Include="WebElements\ToolBar.cs" />
     <Compile Include="WebElements\UiElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

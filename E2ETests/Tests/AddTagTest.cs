@@ -4,35 +4,40 @@ using NUnit.Framework;
 
 namespace E2ETests.Tests
 {
-    [TestFixture]
     public class AddTagTest : NbaSuite
     {
-        NbaPage nbaPage;
-        AddTagDialog addTagDialog;
+        private readonly NbaPage _nbaPage;
+        private readonly AddTagDialog _addTagDialog;
 
-        [SetUp]
-        public void SetUp()
+        public AddTagTest()
         {
-            nbaPage = new NbaPage();
-            addTagDialog = new AddTagDialog();
+            _nbaPage = new NbaPage();
+            _addTagDialog = new AddTagDialog();
         }
 
-        [TearDown]
-        public void TearDown()
+        public void AddTag(string tagName)
         {
-            nbaPage.ClickAddTag();
-            addTagDialog.ClickRemove();
-            addTagDialog.Close();
+            _nbaPage.ClickAddTag();
+            _addTagDialog.SelectTag(tagName);
+            _addTagDialog.Close();
+        }
+        
+        public void DeleteTag(string tagName)
+        {
+            _nbaPage.ClickAddTag();
+            _addTagDialog.ClickRemove(tagName);
+            _addTagDialog.Close();
         }
 
         [Test]
         public void VerifyAddingTag()
         {
-            nbaPage.ClickAddTag();
-            addTagDialog.SelectTag("высшая лига Бельгия");
-            addTagDialog.Close();
+            string tagName = "высшая лига Бельгия";
 
-            Assert.IsTrue(nbaPage.IsTagPresent("высшая лига Бельгия"));
+            var test = new AddTagTest();
+            test.AddTag(tagName);
+            Assert.IsTrue(_nbaPage.IsTagPresent(tagName));
+            test.DeleteTag(tagName);
         }
     }
 }

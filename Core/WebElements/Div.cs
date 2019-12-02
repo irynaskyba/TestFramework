@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using WebElements.WebElements;
 
 namespace Core.WebElements
 {

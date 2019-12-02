@@ -1,17 +1,17 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Reflection;
-using WebElements.WebElements;
+using Core.WebElements;
 
 namespace Core.Extensions
 {
     public static class WebElementExtensions
     {
-        public static T To<T>(this IWebElement webelement) where T : UiElement
+        public static T To<T>(this IWebElement webElement) where T : UiElement
         {
             Type type = typeof(T);
             ConstructorInfo ctor = type.GetConstructor(new[] { typeof(IWebElement) });
-            object instance = ctor.Invoke(new object[] { webelement });
+            object instance = ctor.Invoke(new object[] { webElement });
             return (T)instance;
         }
     }

@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
-using WebElements.WebElements;
 
-namespace WebElements.Controls
+namespace Core.WebElements
 {
     public class InputTextField : UiElement
     {
@@ -11,10 +10,6 @@ namespace WebElements.Controls
 		{
             _textField = webElement;
         }
-
-        public string Text => _textField.Text;
-        
-        public string Value => _textField.GetAttribute("value");
         
         public void SetText(string text, bool append = false)
         {

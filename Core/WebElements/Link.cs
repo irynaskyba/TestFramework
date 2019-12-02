@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using WebElements.WebElements;
 
 namespace Core.WebElements
 {
@@ -7,14 +6,13 @@ namespace Core.WebElements
     {
         private readonly IWebElement _link;
 
-        public Link(IWebElement webelement) : base(webelement)
+        public string Text => _link.Text;
+
+        public Link(IWebElement webElement) : base(webElement)
         {
-            _link = webelement;
+            _link = webElement;
         }
 
-        public void Click()
-        {
-            _link.Click();
-        } 
+        public void Click() => _link.Click();
     }
 }

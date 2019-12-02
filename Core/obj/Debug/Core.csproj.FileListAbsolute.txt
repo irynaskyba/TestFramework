@@ -14,3 +14,4 @@ C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\Core
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\Core\bin\Debug\WindowsInput.dll
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\Core\bin\Debug\WindowsInput.xml
 C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\Core\bin\Debug\SeleniumExtras.WaitHelpers.dll
+C:\Users\iryna\OneDrive\документи\visual studio 2015\Projects\Core\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
