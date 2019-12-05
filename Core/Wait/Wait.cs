@@ -15,10 +15,16 @@ namespace Core.Wait
                           .ExecuteScript("return document.readyState").Equals("complete"));
         }
 
-        public static void ForElementToExist(By by, int secondsToWait = 5)
+        public static void ForElementToExist(By by, int secondsToWait = 15)
         {
             var wait = new WebDriverWait(WebDriver.WebDriver.Instance, TimeSpan.FromSeconds(secondsToWait));
             wait.Until(ExpectedConditions.ElementExists(by));
+        }
+
+        public static void WaitForElementToBeHidden(By by, int secondsToWait = 15)
+        {
+            var wait = new WebDriverWait(WebDriver.WebDriver.Instance, TimeSpan.FromSeconds(secondsToWait));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(by));
         }
     }
 }

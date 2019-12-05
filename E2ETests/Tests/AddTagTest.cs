@@ -1,6 +1,7 @@
 ﻿using E2ETests.Pages;
 using E2ETests.Suites;
 using NUnit.Framework;
+using System.Threading;
 
 namespace E2ETests.Tests
 {

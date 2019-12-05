@@ -15,7 +15,11 @@ namespace Core.WebElements
         {
             _webElement = webElement;
         }
-        
+
+        public string GetAttribute(string attributeName) => _webElement.GetAttribute(attributeName);
+
+        public bool Displayed => _webElement.Displayed;
+
         public T FindElement<T>(By by, int secondsToWait = 5) where T : UiElement
         {
             return _search.FindElement<T>(_webElement, by);
@@ -25,7 +29,5 @@ namespace Core.WebElements
         {
             return _search.FindElements<TElement>(_webElement, by);
         }
-
-        public string GetAttribute(string attributeName) => _webElement.GetAttribute(attributeName);
     }
 }

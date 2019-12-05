@@ -66,6 +66,7 @@
     <Compile Include="WebDriver\WebDriver.cs" />
     <Compile Include="Search\Search.cs" />
     <Compile Include="WebElements\Button.cs" />
+    <Compile Include="WebElements\Dialog.cs" />
     <Compile Include="WebElements\Div.cs" />
     <Compile Include="WebElements\Link.cs" />
     <Compile Include="WebElements\InputTextField.cs" />
