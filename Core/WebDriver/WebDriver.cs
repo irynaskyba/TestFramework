@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using Core.WebElements;
+using Core.Waits;
 
 namespace Core.WebDriver
 {
@@ -42,11 +43,15 @@ namespace Core.WebDriver
 
         public static T FindElement<T>(By by) where T : UiElement
         {
+            Wait.ForPageReadyState();
+            Wait.ForElementToExist(by);
             return Search.FindElement<T>(Instance, by);
         }
 
         public static List<TElement> FindElements<TElement>(By by) where TElement : UiElement
         {
+            Wait.ForPageReadyState();
+            Wait.ForElementToExist(by);
             return Search.FindElements<TElement>(Instance, by);
         }
 

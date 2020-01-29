@@ -1,4 +1,4 @@
-﻿using Core.Wait;
+﻿using Core.Waits;
 using Core.WebDriver;
 using NUnit.Framework;
 using System.Configuration;

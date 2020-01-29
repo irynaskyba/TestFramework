@@ -1,4 +1,4 @@
-﻿using Core.Wait;
+﻿using Core.Waits;
 using Core.WebDriver;
 using Core.WebElements;
 using OpenQA.Selenium;

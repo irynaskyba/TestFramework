@@ -13,6 +13,6 @@ namespace Core.Extensions
             ConstructorInfo ctor = type.GetConstructor(new[] { typeof(IWebElement) });
             object instance = ctor.Invoke(new object[] { webElement });
             return (T)instance;
-        }
+        } 
     }
 }

@@ -3,7 +3,8 @@ using Core.WebElements;
 using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Linq;
-using Core.Wait;
+using Core.Waits;
+using E2ETests.PageElements.Dialogs;
 
 namespace E2ETests.Pages
 {
@@ -18,7 +19,10 @@ namespace E2ETests.Pages
         private Link myLine => WebDriver.FindElement<Link>(By.ClassName("link_color_light-gray"));
 
         private List<Link> tags => WebDriver.FindElements<Link>(By.ClassName("user-panel__menu-block-item-tag"));
-        
+
+        public AddTagDialog AddTagDialog => WebDriver.FindElement<AddTagDialog>(By.XPath("TODO"));
+
+
         public void ClickAddTag()
         {
             Wait.ForElementToExist(_addTagLocator);

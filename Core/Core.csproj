@@ -62,22 +62,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\WebElementExtensions.cs" />
-    <Compile Include="Wait\Wait.cs" />
+    <Compile Include="Waits\Wait.cs" />
     <Compile Include="WebDriver\WebDriver.cs" />
     <Compile Include="Search\Search.cs" />
+    <Compile Include="WebElements\Asserts\Assert.cs" />
     <Compile Include="WebElements\Button.cs" />
     <Compile Include="WebElements\Dialog.cs" />
     <Compile Include="WebElements\Div.cs" />
     <Compile Include="WebElements\Link.cs" />
     <Compile Include="WebElements\InputTextField.cs" />
     <Compile Include="WebElements\ListItem.cs" />
-    <Compile Include="WebElements\ToolBar.cs" />
+    <Compile Include="WebElements\Span.cs" />
     <Compile Include="WebElements\UiElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
